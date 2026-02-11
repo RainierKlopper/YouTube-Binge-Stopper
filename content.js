@@ -104,7 +104,7 @@ function showOverlay() {
 
     // "Be Productive" Action
     productiveBtn.addEventListener('click', () => {
-        window.location.href = "https://www.youtube.com"; // Redirect home
+        chrome.runtime.sendMessage({ action: "CLOSE_TAB" });
     });
 
     // "Watch Anyway" Action

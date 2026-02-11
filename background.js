@@ -93,3 +93,10 @@ chrome.webNavigation.onCommitted.addListener(handleNavigation);
 
 // Listen for History API updates (YouTube is a Single Page App, so it uses this heavily)
 chrome.webNavigation.onHistoryStateUpdated.addListener(handleNavigation);
+
+// Listen for messages from content script
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "CLOSE_TAB" && sender.tab) {
+    chrome.tabs.remove(sender.tab.id);
+  }
+});
