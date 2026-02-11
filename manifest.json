@@ -5,8 +5,7 @@
   "description": "Asks for confirmation before watching a second YouTube video in a row.",
   "permissions": [
     "webNavigation",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "host_permissions": [
     "*://www.youtube.com/*"
